@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberSec Resources Dashboard</title>
+  <meta name="description" content="A premium, interactive cybersecurity portal featuring learning roadmaps, practice labs, red teaming, exploit development, and industrial control systems resources.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP NAVIGATION BAR -->
+  <nav class="top-nav">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      CyberSec Dashboard
+    </div>
+    <div class="nav-items">
+      <a class="nav-item active" href="#overview" id="nav-btn-dash">Dashboard</a>
+      <a class="nav-item" href="#websites">Resources</a>
+      <a class="nav-item" href="#searchengines">Tools</a>
+      <a class="nav-item" href="#ics">Domains</a>
+    </div>
+    <div class="nav-search">
+      <svg viewBox="0 0 16 16">
+        <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <line x1="10.5" y1="10.5" x2="14" y2="14" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <input id="globalSearch" type="text" placeholder="Search resources..." oninput="filterAllResources(this.value)">
+    </div>
+    <div class="nav-right">
+      <a class="btn-github" href="https://github.com/vatsalgupta67/All-In-One-CyberSecurity-Resources" target="_blank">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        GitHub ↗
+      </a>
+    </div>
+  </nav>
+
+  <div class="layout">
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Overview</div>
+        <a class="sidebar-link active" href="#overview" onclick="setActiveLink(this)">
+          <span class="dot"></span> Dashboard
+        </a>
+        <a class="sidebar-link" href="#keypoints" onclick="setActiveLink(this)">
+          <span class="dot"></span> Key Points
+        </a>
+        <a class="sidebar-link" href="#learning" onclick="setActiveLink(this)">
+          <span class="dot"></span> Learning Path
+        </a>
+        <a class="sidebar-link" href="#careers" onclick="setActiveLink(this)">
+          <span class="dot"></span> Career Tracks
+        </a>
+        <a class="sidebar-link" href="#prereqs" onclick="setActiveLink(this)">
+          <span class="dot"></span> Prerequisites
+        </a>
+        <a class="sidebar-link" href="#languages" onclick="setActiveLink(this)">
+          <span class="dot"></span> Suggested Languages
+        </a>
+        <a class="sidebar-link" href="#networking" onclick="setActiveLink(this)">
+          <span class="dot"></span> Networking Topics
+        </a>
+      </div>
+      
+      <div class="sidebar-divider"></div>
+      
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Resources</div>
+        <a class="sidebar-link" href="#websites" onclick="setActiveLink(this)">
+          <span class="dot"></span> Websites
+        </a>
+        <a class="sidebar-link" href="#labs" onclick="setActiveLink(this)">
+          <span class="dot"></span> Practice Labs
+        </a>
+        <a class="sidebar-link" href="#github-repos" onclick="setActiveLink(this)">
+          <span class="dot"></span> GitHub Repos
+        </a>
+        <a class="sidebar-link" href="#podcasts" onclick="setActiveLink(this)">
+          <span class="dot"></span> Podcasts
+        </a>
+        <a class="sidebar-link" href="#platforms" onclick="setActiveLink(this)">
+          <span class="dot"></span> Platforms
+        </a>
+        <a class="sidebar-link" href="#conferences" onclick="setActiveLink(this)">
+          <span class="dot"></span> Conferences
+        </a>
+        <a class="sidebar-link" href="#news" onclick="setActiveLink(this)">
+          <span class="dot"></span> News & Writeups
+        </a>
+      </div>
+      
+      <div class="sidebar-divider"></div>
+      
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Domains</div>
+        <a class="sidebar-link" href="#ics" onclick="setActiveLink(this)">
+          <span class="dot"></span> ICS / SCADA Ops
+        </a>
+        <a class="sidebar-link" href="#redteam" onclick="setActiveLink(this)">
+          <span class="dot"></span> Red Team Ops
+        </a>
+        <a class="sidebar-link" href="#webapp" onclick="setActiveLink(this)">
+          <span class="dot"></span> Web App Pentest
+        </a>
+        <a class="sidebar-link" href="#exploit" onclick="setActiveLink(this)">
+          <span class="dot"></span> Exploit Dev
+        </a>
+      </div>
+      
+      <div class="sidebar-divider"></div>
+      
+      <div class="sidebar-section">
+        <div class="sidebar-heading">Tools</div>
+        <a class="sidebar-link" href="#searchengines" onclick="setActiveLink(this)">
+          <span class="dot"></span> Search Engines
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <main class="content">
+      <div class="breadcrumb">
+        <a href="#overview">CyberSec Portal</a>
+        <span class="sep">›</span>
+        <span class="current" id="bread-current">Dashboard</span>
+      </div>
+
+      <div class="page">
+
+        <!-- VIEW: DASHBOARD -->
+        <div id="view-dashboard" class="tab-view active-view">
+
+          <!-- PAGE HEADER -->
+          <header class="page-header" id="overview">
+            <div class="page-title">
+              All-In-One CyberSecurity Portal
+              <span>A premium, community-driven catalog of free learning materials and threat diagnostics.</span>
+            </div>
+          </header>
+
+          <!-- WELCOME BANNER -->
+          <section class="alert">
+            <svg viewBox="0 0 16 16">
+              <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a.75.75 0 110 1.5A.75.75 0 018 4zm1 7H7V8h2v3z"/>
+            </svg>
+            <div><strong>Community Driven Portal</strong> — All listed resources are free and publicly accessible. Toggle checkboxes to save your learning milestones!</div>
+          </section>
+
+          <!-- DASHBOARD METRICS ROW -->
+          <section class="stats-row">
+            <div class="stat-box">
+              <div class="stat-num cyan" id="stat-bookmarks">0</div>
+              <div class="stat-label">Bookmarked Resources</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num purple">56</div>
+              <div class="stat-label">OSINT Search Engines</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num orange">20</div>
+              <div class="stat-label">GitHub Repos</div>
+            </div>
+            <div class="stat-box progress-widget">
+              <div class="progress-header">
+                <span>Learning Milestones</span>
+                <span id="milestone-percentage">0%</span>
+              </div>
+              <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="milestone-progress"></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ENTERPRISE THREAT INTELLIGENCE COMMAND CENTER -->
+          <section class="panel section-anchor" id="live-monitor" style="margin-bottom: 24px;">
+            <div class="panel-header-custom" style="padding: 20px 24px; border-bottom: 1px solid var(--border-dim); background: rgba(6, 9, 19, 0.45);">
+              <h2 style="font-size: 20px; font-weight: 800; background: linear-gradient(90deg, var(--cyan) 0%, var(--green) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Outfit', sans-serif; letter-spacing: -0.5px;">
+                Enterprise Threat Intelligence Command Center
+              </h2>
+              <p style="font-size: 12.5px; color: var(--text-secondary); margin-top: 4px;">Simultaneous multi-vector attack stream integration.</p>
+            </div>
+            
+            <div class="dual-map-grid">
+              
+              <!-- Vector A -->
+              <div class="map-vector-box">
+                <div class="vector-header">
+                  <h3>Vector A: General Network & Malware</h3>
+                  <span class="tag tag-red">Check Point Engine</span>
+                </div>
+                <div class="iframe-container" style="background: #02040a;">
+                  <iframe 
+                    src="https://threatmap.checkpoint.com/" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    loading="lazy" 
+                    sandbox="allow-scripts allow-same-origin allow-popups">
+                  </iframe>
+                </div>
+              </div>
+
+              <!-- Vector B -->
+              <div class="map-vector-box">
+                <div class="vector-header">
+                  <h3>Vector B: DDoS & Application Violations</h3>
+                  <span class="tag tag-purple">Radware Threat Intel</span>
+                </div>
+                <div class="iframe-container" style="background: #0d0f12;">
+                  <iframe 
+                    src="https://livethreatmap.radware.com/" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    loading="lazy" 
+                    sandbox="allow-scripts allow-same-origin allow-popups">
+                  </iframe>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- LIVE THREAT INTEL LOGGER -->
+          <div class="threat-grid">
+          <div class="panel" id="panel-attacks">
+            <div class="panel-header">
+              <div class="panel-title">Active Attack Campaigns <span class="count" id="attack-count">4 Campaigns</span></div>
+              <button class="btn btn-default btn-icon" onclick="simulateNewCampaign()" title="Simulate Campaign Attack">
+                ⚡
+              </button>
+            </div>
+            <ul class="threat-feed" id="feed-attacks">
+              <!-- Dynamically Populated -->
+            </ul>
+            <div class="last-updated" id="attacks-updated">FEED INITIALIZED</div>
+          </div>
+
+          <div class="panel" id="panel-cves">
+            <div class="panel-header">
+              <div class="panel-title">Critical & Recent CVEs <span class="count" id="cve-count">4 CVEs</span></div>
+            </div>
+            <div id="feed-cves">
+              <!-- Dynamically Populated -->
+            </div>
+            <div class="last-updated" id="cves-updated">FEED INITIALIZED</div>
+          </div>
+        </div>
+
+        <!-- THREAT BREAKDOWN AND PREVENTION CHECKS -->
+        <div class="threat-grid" style="margin-bottom: 24px;">
+          <div class="panel" id="panel-breakdown">
+            <div class="panel-header">
+              <div class="panel-title">Threat Landscape Overview</div>
+            </div>
+            <div id="feed-breakdown">
+              <div class="severity-bar">
+                <div class="sev-label">Ransomware</div>
+                <div class="sev-track"><div class="sev-fill critical" style="width: 42%;"></div></div>
+                <div class="sev-count">42%</div>
+              </div>
+              <div class="severity-bar">
+                <div class="sev-label">Zero-Day Exploits</div>
+                <div class="sev-track"><div class="sev-fill high" style="width: 28%;"></div></div>
+                <div class="sev-count">28%</div>
+              </div>
+              <div class="severity-bar">
+                <div class="sev-label">APT Phishing</div>
+                <div class="sev-track"><div class="sev-fill medium" style="width: 18%;"></div></div>
+                <div class="sev-count">18%</div>
+              </div>
+              <div class="severity-bar">
+                <div class="sev-label">IoT Malware</div>
+                <div class="sev-track"><div class="sev-fill low" style="width: 12%;"></div></div>
+                <div class="sev-count">12%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" id="panel-prevention">
+            <div class="panel-header">
+              <div class="panel-title">Defensive Controls & Best Practices</div>
+            </div>
+            <ul class="prevention-list">
+              <li>
+                <span class="prev-check">✓</span>
+                <div class="threat-body">
+                  <div class="prev-title">Multi-Factor Authentication (MFA)</div>
+                  <div class="prev-desc">Enforce Phishing-resistant MFA on all public surfaces and VPN systems.</div>
+                </div>
+              </li>
+              <li>
+                <span class="prev-check">✓</span>
+                <div class="threat-body">
+                  <div class="prev-title">Micro-Segmentation</div>
+                  <div class="prev-desc">Strictly segment OT / Industrial control systems from standard business IT nodes.</div>
+                </div>
+              </li>
+              <li>
+                <span class="prev-check">✓</span>
+                <div class="threat-body">
+                  <div class="prev-title">Proactive Vulnerability Scans</div>
+                  <div class="prev-desc">Audit external infrastructure immediately against newly announced CVEs.</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </div>
+
+        <!-- RENEWED KEY POINTS: CORE SECURITY AXIOMS -->
+        <section class="panel section-anchor tab-view" id="keypoints">
+          <div class="panel-header">
+            <div class="panel-title">Core Cybersecurity Axioms</div>
+          </div>
+          <div class="card-grid" style="padding: 20px 24px;">
+            <div class="grid-card axiom-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Axiom I: Code is the Law</div>
+                <span class="tag tag-blue">Axiom I</span>
+              </div>
+              <div class="grid-card-desc">
+                Programming is the ultimate system baseline. To defend, audit, or break complex software structures, a practitioner must first master the logic, design, and execution patterns of the underlying code itself.
+              </div>
+            </div>
+
+            <div class="grid-card axiom-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Axiom II: The Network Never Lies</div>
+                <span class="tag tag-green">Axiom II</span>
+              </div>
+              <div class="grid-card-desc">
+                Information packets are the true soul of IT. While threat actors may delete logs and spoof processes, the raw network telemetry, routing tables, and socket handshakes remain an unalterable audit trail.
+              </div>
+            </div>
+
+            <div class="grid-card axiom-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Axiom III: Try Smarter, Not Harder</div>
+                <span class="tag tag-orange">Axiom III</span>
+              </div>
+              <div class="grid-card-desc">
+                Brute forcing is for amateur script-kiddies. Successful security research relies on detailed reconnaissance, logical modeling, and targeting the deep structural weaknesses of systems rather than raw force.
+              </div>
+            </div>
+
+            <div class="grid-card axiom-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Axiom IV: Capabilities over Credentials</div>
+                <span class="tag tag-purple">Axiom IV</span>
+              </div>
+              <div class="grid-card-desc">
+                Academic degrees open corporate gates, but relentless terminal curiosity, hands-on lab competency, and the ability to solve ambiguous technical puzzles are what truly forge elite security professionals.
+              </div>
+            </div>
+
+            <div class="grid-card axiom-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Axiom V: Assume Breach (Zero Trust)</div>
+                <span class="tag tag-red">Axiom V</span>
+              </div>
+              <div class="grid-card-desc">
+                Outer firewalls are always bypassable. True defense requires strict segmentation, absolute zero trust architectures, continuous audit sweeps, and verifying every single asset, transaction, and packet.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW: LEARNING PATH -->
+        <section class="panel section-anchor tab-view" id="learning">
+          <div class="panel-header">
+            <div class="panel-title">Cybersecurity Structured Learning Path</div>
+          </div>
+          <div class="timeline" style="padding: 24px;">
+            <!-- Phase 1 -->
+            <div class="timeline-item">
+              <div class="timeline-badge phase-1">1</div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Phase 1: IT Fundamentals & Command Line</h4>
+                  <span class="tag tag-green">Level: Novice</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Master operating system concepts, filesystem navigation, shell scripting, and hardware basics.</p>
+                  <ul class="prevention-list" style="margin-top: 10px;">
+                    <li><span class="prev-check">✓</span> Linux Command Line & Bash scripting</li>
+                    <li><span class="prev-check">✓</span> Windows Administration & PowerShell</li>
+                    <li><span class="prev-check">✓</span> Basic Computer Hardware & RAM structures</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Phase 2 -->
+            <div class="timeline-item">
+              <div class="timeline-badge phase-2">2</div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Phase 2: Networking & Security Foundations</h4>
+                  <span class="tag tag-blue">Level: Intermediate</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Understand the backbone of internet communications, packet flow, protocols, and standard defensive systems.</p>
+                  <ul class="prevention-list" style="margin-top: 10px;">
+                    <li><span class="prev-check">✓</span> OSI & TCP/IP Network Models</li>
+                    <li><span class="prev-check">✓</span> Wireshark Packet Analysis & Protocol auditing</li>
+                    <li><span class="prev-check">✓</span> Firewalls, IDS/IPS, and local network segmentation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="timeline-item">
+              <div class="timeline-badge phase-3">3</div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Phase 3: Defensive & Offensive Specializations</h4>
+                  <span class="tag tag-orange">Level: Advanced</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Choose your pathway and dive deep into actual penetration testing tools or security monitoring systems.</p>
+                  <ul class="prevention-list" style="margin-top: 10px;">
+                    <li><span class="prev-check">✓</span> Active Directory Hacking & Red Teaming basics</li>
+                    <li><span class="prev-check">✓</span> SOC Analyst operations, SIEM monitoring, threat hunting</li>
+                    <li><span class="prev-check">✓</span> Web Application vulnerability assessment (OWASP Top 10)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="timeline-item">
+              <div class="timeline-badge phase-4">4</div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">Phase 4: Capstone Mastery & Certifications</h4>
+                  <span class="tag tag-purple">Level: Expert</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Obtain professional credentials, build offensive/defensive portfolios, and engage in advanced realistic cyber wars.</p>
+                  <ul class="prevention-list" style="margin-top: 10px;">
+                    <li><span class="prev-check">✓</span> Top Certifications: Security+, CEH, OSCP, CISSP</li>
+                    <li><span class="prev-check">✓</span> Complex lab environments (HackTheBox, OffSec Proving Grounds)</li>
+                    <li><span class="prev-check">✓</span> Custom offensive malware loader crafting & EDR evasion research</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW: CAREER TRACKS -->
+        <section class="panel section-anchor tab-view" id="careers">
+          <div class="panel-header">
+            <div class="panel-title">Cybersecurity Career Pathways</div>
+          </div>
+          <div class="card-grid" style="padding: 20px 24px;">
+            <!-- Career 1 -->
+            <div class="grid-card career-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Security Operations Center (SOC) Analyst</div>
+                <span class="tag tag-green">Blue Team</span>
+              </div>
+              <div class="grid-card-desc">
+                Monitors organization networks for security events, investigates alerts, mitigates immediate threats, and manages SIEM architectures.
+              </div>
+              <div class="career-details" style="font-size: 11.5px; border-top: 1px solid var(--border-dim); padding-top: 10px; margin-top: 5px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px;">
+                <div><strong>Salary Est:</strong> $80,000 - $120,000</div>
+                <div><strong>Key Skills:</strong> SIEM, Wireshark, Incident Response, Log Analysis</div>
+                <div><strong>Best Certs:</strong> Security+, CySA+, GCIH</div>
+              </div>
+            </div>
+
+            <!-- Career 2 -->
+            <div class="grid-card career-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Penetration Tester / Ethical Hacker</div>
+                <span class="tag tag-red">Red Team</span>
+              </div>
+              <div class="grid-card-desc">
+                Authorized simulation of active cyber attacks against network structures, web applications, and corporate infrastructure to identify vulnerabilities.
+              </div>
+              <div class="career-details" style="font-size: 11.5px; border-top: 1px solid var(--border-dim); padding-top: 10px; margin-top: 5px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px;">
+                <div><strong>Salary Est:</strong> $95,000 - $150,000</div>
+                <div><strong>Key Skills:</strong> Python, Metasploit, Nmap, Active Directory, Web Exploits</div>
+                <div><strong>Best Certs:</strong> OSCP, CEH, GPEN, PNPT</div>
+              </div>
+            </div>
+
+            <!-- Career 3 -->
+            <div class="grid-card career-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Cloud Security Engineer</div>
+                <span class="tag tag-blue">Purple Team</span>
+              </div>
+              <div class="grid-card-desc">
+                Architects secure cloud infrastructure (AWS, Azure, GCP), monitors access policies, establishes automated guardrails, and hardening structures.
+              </div>
+              <div class="career-details" style="font-size: 11.5px; border-top: 1px solid var(--border-dim); padding-top: 10px; margin-top: 5px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px;">
+                <div><strong>Salary Est:</strong> $110,000 - $170,000</div>
+                <div><strong>Key Skills:</strong> Cloud Architecture, Terraform, IAM Policies, DevSecOps</div>
+                <div><strong>Best Certs:</strong> AWS Security, CCSP, CCSK</div>
+              </div>
+            </div>
+
+            <!-- Career 4 -->
+            <div class="grid-card career-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Incident Responder / DFIR</div>
+                <span class="tag tag-orange">Response</span>
+              </div>
+              <div class="grid-card-desc">
+                Deploys instantly in emergency breaches, conducts digital forensics on memory and disk files, traces actor entry points, and designs containment paths.
+              </div>
+              <div class="career-details" style="font-size: 11.5px; border-top: 1px solid var(--border-dim); padding-top: 10px; margin-top: 5px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px;">
+                <div><strong>Salary Est:</strong> $100,000 - $160,000</div>
+                <div><strong>Key Skills:</strong> Forensics, Malware Analysis, Reverse Engineering, EDR Tools</div>
+                <div><strong>Best Certs:</strong> GCFE, GCFA, CHFI</div>
+              </div>
+            </div>
+
+            <!-- Career 5 -->
+            <div class="grid-card career-card">
+              <div class="grid-card-header">
+                <div class="grid-card-title">Security Architect / Director</div>
+                <span class="tag tag-purple">Leadership</span>
+              </div>
+              <div class="grid-card-desc">
+                Designs high-level cybersecurity enterprise defense postures, coordinates framework compliance (NIST, ISO), manages budgets, and leads security teams.
+              </div>
+              <div class="career-details" style="font-size: 11.5px; border-top: 1px solid var(--border-dim); padding-top: 10px; margin-top: 5px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 4px;">
+                <div><strong>Salary Est:</strong> $130,000 - $200,000+</div>
+                <div><strong>Key Skills:</strong> Risk Management, Leadership, Security Architecture, Compliance</div>
+                <div><strong>Best Certs:</strong> CISSP, CISM, CISA</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PREREQUISITES CHECKLIST -->
+        <section class="panel section-anchor tab-view" id="prereqs">
+          <div class="panel-header">
+            <div class="panel-title">Prerequisites & Foundational Milestones</div>
+            <div class="panel-actions">
+              <span class="count">6 Modules</span>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="checkbox-cell">Done</th>
+                  <th style="width: 50px;">#</th>
+                  <th>Topic Domain</th>
+                  <th>Core Focus Area</th>
+                  <th>Where to Learn</th>
+                </tr>
+              </thead>
+              <tbody id="prereq-tbody">
+                <tr class="check-row" onclick="togglePrereq(1)">
+                  <td class="checkbox-cell">
+                    <div class="cyber-checkbox"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                  </td>
+                  <td>1</td>
+                  <td class="topic-name">Command Line Interfaces & Filesystems</td>
+                  <td>Linux CLI commands, Windows Cmd/PowerShell, permissions, scripting</td>
+                  <td class="cell-muted">FreeYouTube guides & CTF basics</td>
+                </tr>
+                <tr class="check-row" onclick="togglePrereq(2)">
+                  <td class="checkbox-cell">
+                    <div class="cyber-checkbox"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                  </td>
+                  <td>2</td>
+                  <td class="topic-name">Programming Fundamentals (Python)</td>
+                  <td>Control flows, loops, socket programming, script automation, parser building</td>
+                  <td class="cell-muted">FreeCodeCamp & Interactive Tutorials</td>
+                </tr>
+                <tr class="check-row" onclick="togglePrereq(3)">
+                  <td class="checkbox-cell">
+                    <div class="cyber-checkbox"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                  </td>
+                  <td>3</td>
+                  <td class="topic-name">Basic Cryptography Concepts</td>
+                  <td>Hashing vs Encryption, public/private keys, SSL/TLS handshakes, AES/RSA algorithms</td>
+                  <td class="cell-muted">Khan Academy & YouTube explanations</td>
+                </tr>
+                <tr class="check-row" onclick="togglePrereq(4)">
+                  <td class="checkbox-cell">
+                    <div class="cyber-checkbox"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                  </td>
+                  <td>4</td>
+                  <td class="topic-name">Technical Hardware & OS Internals</td>
+                  <td>CPU registers, Memory segments (Stack vs Heap), system BIOS, hardware interfaces</td>
+                  <td class="cell-muted">Computer Architecture forums</td>
+                </tr>
+                <tr class="check-row" onclick="togglePrereq(5)">
+                  <td class="checkbox-cell">
+                    <div class="cyber-checkbox"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                  </td>
+                  <td>5</td>
+                  <td class="topic-name">Computer Networking Sockets & Protocols</td>
+                  <td>OSI model layers, TCP vs UDP routing, subnet masks, packets, firewall logic</td>
+                  <td class="cell-muted">Network+ courses (YouTube / Professor Messer)</td>
+                </tr>
+                <tr class="check-row" onclick="togglePrereq(6)">
+                  <td class="checkbox-cell">
+                    <div class="cyber-checkbox"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                  </td>
+                  <td>6</td>
+                  <td class="topic-name">Advanced Google OSINT & Researching</td>
+                  <td>Search operator dorks, threat intelligence databases, catalog indexing</td>
+                  <td class="cell-muted">Practical OSINT guides</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- PROGRAMMING LANGUAGES SUGGESTIONS -->
+        <section class="panel section-anchor tab-view" id="languages">
+          <div class="panel-header">
+            <div class="panel-title">CyberSecurity Suggested Languages</div>
+          </div>
+          <div class="tabs" id="langTabs">
+            <button class="tab active" onclick="switchLangTab('lang-beginner', this)">Beginner Level</button>
+            <button class="tab" onclick="switchLangTab('lang-intermediate', this)">Intermediate Level</button>
+            <button class="tab" onclick="switchLangTab('lang-advanced', this)">Corporate / Offensive Ops</button>
+          </div>
+          <div id="lang-beginner" class="tab-content active">
+            <div class="notice">
+              <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a.75.75 0 110 1.5A.75.75 0 018 4zm1 7H7V8h2v3z"/></svg>
+              <span>Beginners should start with Python. It opens up automation, parsing, exploit scripts, and high-level logic.</span>
+            </div>
+            <div class="chip-list">
+              <span class="chip star">Python ★</span>
+            </div>
+          </div>
+          <div id="lang-intermediate" class="tab-content">
+            <div class="chip-list">
+              <span class="chip star">Python</span>
+              <span class="chip star">Bash Shell</span>
+              <span class="chip">C (Basic Syntax)</span>
+              <span class="chip">Structured Query Language (SQL)</span>
+              <span class="chip">JavaScript (Client-Side)</span>
+              <span class="chip">PHP (Server-Side Basics)</span>
+              <span class="chip">PowerShell Scripting</span>
+            </div>
+          </div>
+          <div id="lang-advanced" class="tab-content">
+            <div class="chip-list">
+              <span class="chip star">Python ★</span>
+              <span class="chip star">SQL ★</span>
+              <span class="chip star">C ★</span>
+              <span class="chip star">Bash ★</span>
+              <span class="chip star">PowerShell ★</span>
+              <span class="chip">C# (Windows Active Directory / Offensive Apps)</span>
+              <span class="chip">C++ (Windows EDR Bypass / Malware Crafting)</span>
+              <span class="chip">Assembly x86/x64 (Reverse Engineering / Buffer Overflows)</span>
+              <span class="chip">Go (Highly Efficient Custom Offensive Tools)</span>
+              <span class="chip">Nim (Modern Offensive Operations / Loader Bypass)</span>
+              <span class="chip">JavaScript / Node.js (Web Security Analysis)</span>
+              <span class="chip">PHP (Classic Web Exploit Analysis)</span>
+              <span class="chip">Lua (Wireshark Custom Plugin Scripts)</span>
+              <span class="chip">Java (Android Platform Penetration)</span>
+              <span class="chip">Ruby (Metasploit Exploit Integrations)</span>
+              <span class="chip">Perl (Legacy Scripting)</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- NETWORKING CHIPS & GLOSSARY -->
+        <section class="panel section-anchor tab-view" id="networking">
+          <div class="panel-header">
+            <div class="panel-title">Computer Networking Topics <span class="count">31 Topics</span></div>
+            <span style="font-size:11.5px;color:var(--text-secondary);">Click any topic to read definition!</span>
+          </div>
+          <div class="chip-list" id="networking-chips-container">
+            <!-- Dynamically populated from JavaScript -->
+          </div>
+        </section>
+
+        <!-- WEBSITES DYNAMIC MOUNT -->
+        <section class="panel section-anchor tab-view" id="websites">
+          <div class="panel-header">
+            <div class="panel-title">Essential Learning Websites <span class="count" id="websites-cnt">0</span></div>
+          </div>
+          <div class="table-wrap">
+            <table id="tbl-websites">
+              <thead>
+                <tr>
+                  <th>Website Name</th>
+                  <th>Target URL</th>
+                  <th>Key Focus Description</th>
+                  <th style="width: 140px;">Resource Type</th>
+                  <th style="width: 80px; text-align: center;">Save</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-websites">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- LABS DYNAMIC MOUNT -->
+        <section class="panel section-anchor tab-view" id="labs">
+          <div class="panel-header">
+            <div class="panel-title">Recommended Cyber Practice Labs <span class="count" id="labs-cnt">0</span></div>
+          </div>
+          <div class="card-grid" id="grid-labs">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- REPOS DYNAMIC MOUNT -->
+        <section class="panel section-anchor tab-view" id="github-repos">
+          <div class="panel-header">
+            <div class="panel-title">Curated GitHub Repositories <span class="count" id="repos-cnt">0</span></div>
+          </div>
+          <div class="table-wrap">
+            <table id="tbl-repos">
+              <thead>
+                <tr>
+                  <th>Repository Path</th>
+                  <th>Focus / Domain Category</th>
+                  <th style="width: 80px; text-align: center;">Save</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-repos">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- PODCASTS DYNAMIC MOUNT -->
+        <section class="panel section-anchor tab-view" id="podcasts">
+          <div class="panel-header">
+            <div class="panel-title">Audio Podcasts & Briefings <span class="count" id="podcasts-cnt">0</span></div>
+          </div>
+          <div class="table-wrap">
+            <table id="tbl-podcasts">
+              <thead>
+                <tr>
+                  <th>Podcast Name</th>
+                  <th>Webpage Link</th>
+                  <th>Coverage & Topics</th>
+                  <th style="width: 80px; text-align: center;">Save</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-podcasts">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- PLATFORMS DYNAMIC MOUNT -->
+        <section class="panel section-anchor tab-view" id="platforms">
+          <div class="panel-header">
+            <div class="panel-title">IT & Security Training Platforms <span class="count" id="platforms-cnt">0</span></div>
+          </div>
+          <div class="card-grid" id="grid-platforms">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- CONFERENCES DYNAMIC MOUNT -->
+        <section class="panel section-anchor tab-view" id="conferences">
+          <div class="panel-header">
+            <div class="panel-title">Worldwide Cybersecurity Conferences <span class="count" id="conferences-cnt">0</span></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Conference Name</th>
+                  <th>Category / Scale Type</th>
+                  <th style="width: 80px; text-align: center;">Save</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-conferences">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- NEWS DYNAMIC MOUNT -->
+        <section class="panel section-anchor tab-view" id="news">
+          <div class="panel-header">
+            <div class="panel-title">Intelligence News & Writeups <span class="count" id="news-cnt">0</span></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Intelligence Source Name</th>
+                  <th>Website Portal</th>
+                  <th>Focus Coverage</th>
+                  <th style="width: 80px; text-align: center;">Save</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-news">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- DYNAMIC DOMAINS: ICS/SCADA OPERATIONS -->
+        <section class="panel section-anchor tab-view" id="ics">
+          <div class="panel-header">
+            <div class="panel-title">Industrial Control Systems (ICS / SCADA) Operations</div>
+            <div class="panel-actions">
+              <span class="tag tag-orange">OT DOMAIN</span>
+            </div>
+          </div>
+          <div class="tabs" id="icsTabs">
+            <button class="tab active" onclick="switchDomainTab('ics', 'ics-overview', this)">Core Fundamentals</button>
+            <button class="tab" onclick="switchDomainTab('ics', 'ics-resources', this)">Learning Resources</button>
+            <button class="tab" onclick="switchDomainTab('ics', 'ics-books', this)">Literature Books</button>
+          </div>
+          
+          <div id="ics-overview" class="tab-content active">
+            <div class="notice">
+              <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a.75.75 0 110 1.5A.75.75 0 018 4zm1 7H7V8h2v3z"/></svg>
+              <span><strong>Operational Technology (OT)</strong> deals with physical process hardware. Key concepts revolve around availability, safety, and operational continuity.</span>
+            </div>
+            <div class="kv-list">
+              <div class="kv-item"><span class="kv-key">Definitions</span><span class="kv-val">Understand core components: SCADA (Supervisory Control), HMI (Human-Machine Interface), PLC (Programmable Logic Controller), RTU (Remote Terminal Unit).</span></div>
+              <div class="kv-item"><span class="kv-key">IT vs OT Security</span><span class="kv-val">IT prioritizes Confidentiality (data secrecy). OT strictly prioritizes Availability and Safety (physical prevention). OT nodes are often highly legacy, lacking encryption or simple patching cycles.</span></div>
+              <div class="kv-item"><span class="kv-key">OT Protocols</span><span class="kv-val">Learn specific industrial network protocols: Modbus (serial/TCP), Siemens S7Comm, Profinet, EtherNet/IP, DNP3.</span></div>
+            </div>
+          </div>
+
+          <div id="ics-resources" class="tab-content">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Free / Paid Learning Resource</th><th>Type / Description</th></tr>
+                </thead>
+                <tbody id="tbody-ics-resources">
+                  <!-- JavaScript populates -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="ics-books" class="tab-content">
+            <div class="kv-list">
+              <div class="kv-item"><span class="kv-key">Pentesting Industrial Control Systems</span><span class="kv-val">Packt Publishing - Clear guide to conducting hands-on assessments of OT networks.</span></div>
+              <div class="kv-item"><span class="kv-key">Industrial Cybersecurity</span><span class="kv-val">Packt Publishing - Deep insights into efficiently monitoring cybersecurity posture.</span></div>
+              <div class="kv-item"><span class="kv-key">Hacking Exposed Industrial Control Systems</span><span class="kv-val">McGraw Hill - Explores real-world attacks, vectors, and hardening checklists.</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DYNAMIC DOMAINS: RED TEAM OPERATIONS -->
+        <section class="panel section-anchor tab-view" id="redteam">
+          <div class="panel-header">
+            <div class="panel-title">Red Team Operations & Adversary Emulation</div>
+            <div class="panel-actions"><span class="tag tag-red">OFFENSIVE DOMAIN</span></div>
+          </div>
+          <div class="tabs" id="redTabs">
+            <button class="tab active" onclick="switchDomainTab('red', 'red-overview', this)">Core Overview</button>
+            <button class="tab" onclick="switchDomainTab('red', 'red-resources', this)">Emulation Toolkits</button>
+          </div>
+          
+          <div id="red-overview" class="tab-content active">
+            <div class="notice">
+              <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a.75.75 0 110 1.5A.75.75 0 018 4zm1 7H7V8h2v3z"/></svg>
+              <span>Red Teaming simulates targeted attacks to evaluate the capability of people, tools, and response policies.</span>
+            </div>
+            <div class="kv-list">
+              <div class="kv-item"><span class="kv-key">Pre-Requisites</span><span class="kv-val">Requires mastery of Active Directory, network lateral movement, post-exploitation scripts, and bypass configurations.</span></div>
+              <div class="kv-item"><span class="kv-key">Offensive Mindset</span><span class="kv-val">Unlike pentesting, Red Teaming does not look for every bug; it builds a realistic threat campaign to test detection alarms. "Nothing is secure."</span></div>
+            </div>
+          </div>
+
+          <div id="red-resources" class="tab-content">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Emulation Library / Resource Path</th><th>Key Focus Area</th></tr>
+                </thead>
+                <tbody id="tbody-red-resources">
+                  <!-- Javascript populates -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- DYNAMIC DOMAINS: WEB APPLICATION PENTESTING -->
+        <section class="panel section-anchor tab-view" id="webapp">
+          <div class="panel-header">
+            <div class="panel-title">Web Application Penetration Testing</div>
+            <div class="panel-actions"><span class="tag tag-blue">WEB DOMAIN</span></div>
+          </div>
+          <div class="tabs" id="webTabs">
+            <button class="tab active" onclick="switchDomainTab('web', 'web-overview', this)">Core Concepts</button>
+            <button class="tab" onclick="switchDomainTab('web', 'web-resources', this)">Methodologies</button>
+          </div>
+          
+          <div id="web-overview" class="tab-content active">
+            <div class="notice">
+              <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a.75.75 0 110 1.5A.75.75 0 018 4zm1 7H7V8h2v3z"/></svg>
+              <span>Web Applications are primary entryways into modern cloud setups. OWASP Top 10 lists core vulnerabilities.</span>
+            </div>
+            <div class="kv-list">
+              <div class="kv-item"><span class="kv-key">Vulnerabilities</span><span class="kv-val">Understand SQL Injections, Cross-Site Scripting (XSS), Broken Auth, CSRF, and Server Side Request Forgery (SSRF).</span></div>
+              <div class="kv-item"><span class="kv-key">Key Languages</span><span class="kv-val">Proficiency in JavaScript, PHP, Node.js, and browser APIs gives you immediate debugging advantage.</span></div>
+            </div>
+          </div>
+
+          <div id="web-resources" class="tab-content">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Web Application Security Library</th><th>Format Style / Coverage</th></tr>
+                </thead>
+                <tbody id="tbody-web-resources">
+                  <!-- Javascript populates -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- DYNAMIC DOMAINS: EXPLOIT DEVELOPMENT -->
+        <section class="panel section-anchor tab-view" id="exploit">
+          <div class="panel-header">
+            <div class="panel-title">Exploit Development & Binary Analysis</div>
+            <div class="panel-actions"><span class="tag tag-purple">BINARY DOMAIN</span></div>
+          </div>
+          <div class="tabs" id="exploitTabs">
+            <button class="tab active" onclick="switchDomainTab('exploit', 'exploit-overview', this)">Core Prerequisites</button>
+            <button class="tab" onclick="switchDomainTab('exploit', 'exploit-resources', this)">Binary Resources</button>
+          </div>
+          
+          <div id="exploit-overview" class="tab-content active">
+            <div class="notice">
+              <svg viewBox="0 0 16 16"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a.75.75 0 110 1.5A.75.75 0 018 4zm1 7H7V8h2v3z"/></svg>
+              <span>Binary analysis deals directly with system architecture, memory control states, and binary fuzzing mechanisms.</span>
+            </div>
+            <div class="kv-list">
+              <div class="kv-item"><span class="kv-key">Pre-Requisites</span><span class="kv-val">Requires assembly languages (x86/x64), reverse engineering decompilers (Ghidra, IDA), debuggers (x64dbg, GDB), and C knowledge.</span></div>
+              <div class="kv-item"><span class="kv-key">Binary Protections</span><span class="kv-val">Learn to analyze and bypass standard OS mitigations: ASLR (Address Space Randomization), DEP/NX (Execution Prevention), Stack Canaries.</span></div>
+            </div>
+          </div>
+
+          <div id="exploit-resources" class="tab-content">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Exploitation & RE Resource</th><th>Medium Platform</th></tr>
+                </thead>
+                <tbody id="tbody-exploit-resources">
+                  <!-- Javascript populates -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- DYNAMIC MOUNT: OSINT & SECURITY SEARCH ENGINES -->
+        <section class="panel section-anchor tab-view" id="searchengines">
+          <div class="panel-header">
+            <div class="panel-title">CyberSecurity OSINT & Hacking Search Engines <span class="count" id="se-cnt">0</span></div>
+            <div class="panel-actions">
+              <span id="se-category-count" style="font-size:11.5px;color:var(--text-secondary);">Filter Category: All</span>
+            </div>
+          </div>
+          <div class="se-grid" id="grid-search-engines">
+            <!-- Dynamically populated from JS -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div>
+          Premium Cybersecurity Resource Portal
+        </div>
+        <div>
+          <a href="#overview">Back to Top ↑</a>
+        </div>
+      </footer>
+    </main>
+
+  </div>
+
+  <!-- SLIDE OUT DRAWER FOR NETWORKING GLOSSARY -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+  <div class="drawer" id="glossaryDrawer">
+    <div class="drawer-header">
+      <div class="drawer-title" id="drawerTitle">Glossary Definition</div>
+      <button class="drawer-close" onclick="closeDrawer()">&times;</button>
+    </div>
+    <div class="drawer-content" id="drawerContent">
+      <!-- Dynamically filled on chip click -->
+    </div>
+  </div>
+
+  <!-- LOAD JS SCRIPTS -->
+  <script src="app.js"></script>
+</body>
+</html>
